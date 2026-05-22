@@ -1,4 +1,4 @@
-class Solution(object): # O(n)
+class Solution(object): # O(n) EASY
     def twoSum(self, nums, target):
         """
         :type nums: List[int]
