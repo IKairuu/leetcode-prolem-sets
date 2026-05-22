@@ -1,5 +1,5 @@
 class Solution(object):
-    def lengthOfLongestSubstring(self, s): # O(n^2) can still be improved using dictionary
+    def lengthOfLongestSubstring(self, s): # O(n^2) can still be improved using dictionary MEDIUM
         """
         :type s: str
         :rtype: int
