@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution(object):
-    def addTwoNumbers(self, l1, l2):
+    def addTwoNumbers(self, l1, l2): #MEDIUM
         """
         :type l1: Optional[ListNode]
         :type l2: Optional[ListNode]
