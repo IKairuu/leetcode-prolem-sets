@@ -1,7 +1,4 @@
-class Solution(object): #MEDIUM 7ms
-  """
-  can still be improved if I implemented a reusable functions to reduce runtime
-  """
+class Solution(object): #MEDIUM 2ms
     def myAtoi(self, s):
         """
         :type s: str
@@ -11,16 +8,16 @@ class Solution(object): #MEDIUM 7ms
         stack = []
         index = -1
 
-        if s == "" or (s[0].isdigit() is False and s[0] != " " and s[0] != "-" and s[0] != "+"):
+        if s == "" or (not s[0].isdigit() and s[0] != " " and s[0] != "-" and s[0] != "+"):
             return 0
 
         for x in s:
             if x != " ":
-                if x.isdigit() is False and x != "-" and x != "+":
+                if not x.isdigit() and x != "-" and x != "+":
                     break
 
                 if index >= 0:
-                    if x.isdigit() is False:
+                    if not x.isdigit():
                         break
 
                     if stack[index] == "-" and x == "0":
@@ -34,12 +31,12 @@ class Solution(object): #MEDIUM 7ms
             
             if x == " " and index >= 0:
                 joined = ''.join(stack)
-                if joined.isdigit() is True or (joined.startswith("-") and joined[1:].isdigit()):
+                if joined.isdigit() or (joined.startswith("-") and joined[1:].isdigit()):
                     return int(''.join(stack))
                 return 0
             
         joined = ''.join(stack)
-        if joined.isdigit() is False and not ((joined.startswith("-") and joined[1:].isdigit()) or (joined.startswith("+") and joined[1:].isdigit())):
+        if not joined.isdigit() and not ((joined.startswith("-") and joined[1:].isdigit()) or (joined.startswith("+") and joined[1:].isdigit())):
             return 0
             
         answer = int(joined)
